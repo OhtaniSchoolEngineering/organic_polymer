@@ -604,7 +604,7 @@
     <div class="flex flex-col md:flex-row items-center gap-4 max-w-5xl w-full justify-center relative">
 
       <!-- 左切り替えボタン -->
-      <button
+      <button id="modal-nav-prev"
         class="absolute left-2 md:-left-16 bg-white hover:bg-indigo-50 text-indigo-600 w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition z-20"
         onclick="navigateCatalog(-1)">
         <span class="font-bold text-sm">◀</span>
@@ -624,7 +624,7 @@
       </div>
 
       <!-- 右切り替えボタン -->
-      <button
+      <button id="modal-nav-next"
         class="absolute right-2 md:-right-16 bg-white hover:bg-indigo-50 text-indigo-600 w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition z-20"
         onclick="navigateCatalog(1)">
         <span class="font-bold text-sm">▶</span>
@@ -1823,6 +1823,13 @@
       }
     }
 
+    function setModalNavVisible(visible) {
+      const prev = document.getElementById('modal-nav-prev');
+      const next = document.getElementById('modal-nav-next');
+      if (prev) prev.classList.toggle('hidden', !visible);
+      if (next) next.classList.toggle('hidden', !visible);
+    }
+
     function openPracticeHistoryDetail(idx) {
       const mode = appMode;
       // appMode は 'normal'/'endless' だが getHist は 'practice'/'endless' を受け付けるため変換する
@@ -1831,6 +1838,7 @@
       const r = hist[idx];
       if (!r) return;
 
+      setModalNavVisible(false);
       const dateStr = new Date(r.date).toLocaleString('ja-JP');
       const secName = getSecName(r.section);
 
@@ -1984,6 +1992,8 @@
       const db = getHist('test');
       const r = db[idx];
       if (!r) return;
+
+      setModalNavVisible(false);
 
       const dateStr = new Date(r.date).toLocaleString('ja-JP');
       const secName = getSecName(r.section);
@@ -2325,6 +2335,7 @@
       if (!q) return;
 
       currentCatalogQId = qId;
+      setModalNavVisible(true);
       const stats = getQStats();
       const history = stats[qId] || [];
 
