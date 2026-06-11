@@ -1825,7 +1825,9 @@
 
     function openPracticeHistoryDetail(idx) {
       const mode = appMode;
-      const hist = getHist(mode);
+      // appMode は 'normal'/'endless' だが getHist は 'practice'/'endless' を受け付けるため変換する
+      const histKey = (mode === 'normal') ? 'practice' : 'endless';
+      const hist = getHist(histKey);
       const r = hist[idx];
       if (!r) return;
 
@@ -2663,6 +2665,7 @@
         fb.innerHTML = '<span>❌</span><span>不正解...</span>';
       }
 
+      // リベンジ問題の回答は図鑑ステータスに影響させない
       if (!isRevenge) {
         const stats = getQStats();
         if (!stats[q.id]) stats[q.id] = [];
