@@ -2663,11 +2663,13 @@
         fb.innerHTML = '<span>❌</span><span>不正解...</span>';
       }
 
-      const stats = getQStats();
-      if (!stats[q.id]) stats[q.id] = [];
-      stats[q.id].push(isCorrect);
-      if (stats[q.id].length > 5) stats[q.id].shift();
-      saveQStats(stats);
+      if (!isRevenge) {
+        const stats = getQStats();
+        if (!stats[q.id]) stats[q.id] = [];
+        stats[q.id].push(isCorrect);
+        if (stats[q.id].length > 5) stats[q.id].shift();
+        saveQStats(stats);
+      }
 
       answerLog.push({
         qId: q.id, text: q.text, theme: q.theme,
