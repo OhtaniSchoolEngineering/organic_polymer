@@ -1212,6 +1212,7 @@
     let testChartInst = null;
     let autoTimer = null;
     let isRevenge = false;
+    let isSingleChallenge = false; // 「この問顔だけ解く」ピンポイント特訓フラグ
     let revengeOriginIdx = null;
     let chartLimit = 0; // 0 = 全件, 20 = 直近20件, 10 = 直近10件
     let testChartLimit = 0; // 0 = 全件, 20 = 直近20件, 10 = 直近10件
@@ -2416,6 +2417,7 @@
     function startSingleQuestionChallenge(qId) {
       closeModal();
       isRevenge = false;
+      isSingleChallenge = true; // 図鑑・履歴への保存をスキップするフラグ
       answerLog = [];
       currentIdx = 0;
       score = 0;
@@ -2453,6 +2455,7 @@
       appMode = 'test';
       selectedSec = sec;
       isRevenge = false;
+      isSingleChallenge = false;
       answerLog = [];
       currentIdx = 0;
       score = 0;
@@ -2479,6 +2482,7 @@
 
     function startQuiz(revenge) {
       isRevenge = !!revenge;
+      isSingleChallenge = false;
       answerLog = [];
       currentIdx = 0;
       score = 0;
@@ -2676,8 +2680,8 @@
         fb.innerHTML = '<span>❌</span><span>不正解...</span>';
       }
 
-      // リベンジ問題の回答は図鑑ステータスに影響させない
-      if (!isRevenge) {
+      // リベンジ問題・ピンポイント特訓の回答は図鑑ステータスに影響させない
+      if (!isRevenge && !isSingleChallenge) {
         const stats = getQStats();
         if (!stats[q.id]) stats[q.id] = [];
         stats[q.id].push(isCorrect);
@@ -2756,7 +2760,8 @@
         let streak = getPracticeStreak();
         let bestStreak = getBestPracticeStreak();
 
-        if (!isRevenge) {
+        // ピンポイント特訓は成績推移・履歴・ストリークに一切影響させない
+        if (!isRevenge && !isSingleChallenge) {
           if (isPerfect) {
             streak++;
             if (streak > bestStreak) { bestStreak = streak; saveBestPracticeStreak(bestStreak); }
@@ -2767,7 +2772,7 @@
         }
 
         const wrongIds = answerLog.filter(a => !a.correct).map(a => a.qId);
-        saveWrongList(wrongIds);
+        if (!isSingleChallenge) saveWrongList(wrongIds);
 
         const h = getHist('practice');
         if (isRevenge) {
@@ -2785,8 +2790,8 @@
             }
             saveHist('practice', h);
           }
-        } else {
-          // 通常の新規挑戦時のみ履歴に保存する
+        } else if (!isSingleChallenge) {
+          // 通常の新規挑戦時のみ履歴に保存する（ピンポイント特訓は除外）
           h.push({
             date: Date.now(),
             section: selectedSec,
