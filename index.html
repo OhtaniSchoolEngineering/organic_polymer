@@ -1361,6 +1361,12 @@
       showScreen(targetTabId);
 
       if (tab === 'practice') {
+        const endlessBtn = document.getElementById('mode-endless-btn');
+        if (endlessBtn && endlessBtn.classList.contains('bg-white')) {
+          appMode = 'endless';
+        } else {
+          appMode = 'normal';
+        }
         renderHome();
       } else if (tab === 'test') {
         renderTestHome();
