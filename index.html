@@ -118,7 +118,7 @@
         <span class="text-2xl">🧪</span>
         <div class="text-center sm:text-left flex flex-col gap-1">
           <div class="flex items-center justify-center sm:justify-start gap-2">
-            <h1 id="quiz-header-title" class="text-base font-bold text-indigo-600 tracking-wide">有機・高分子基礎チェック</h1>
+            <h1 id="quiz-header-title" class="text-base font-bold text-orange-600 tracking-wide">有機・高分子基礎チェック</h1>
             <!-- ▼ アコーディオンボタン -->
             <div class="relative inline-block text-left">
               <button onclick="toggleAppMenu(event)"
@@ -130,7 +130,15 @@
                 class="hidden absolute left-0 mt-1.5 w-40 bg-white border border-gray-200 rounded-xl shadow-lg py-1.5 z-[100] text-xs">
                 <a href="https://ohtanischoolengineering.github.io/basic_chem_quiz/"
                   class="block px-3 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition font-bold">
-                  🧪 化学基礎版
+                  🧪 化学基礎
+                </a>
+                <a href="#"
+                  class="block px-3 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition font-bold">
+                  🧪 理論化学
+                </a>
+                <a href="https://ohtanischoolengineering.github.io/inorganic_quiz/"
+                  class="block px-3 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition font-bold">
+                  🧪 無機化学
                 </a>
               </div>
             </div>
@@ -141,7 +149,7 @@
 
       <!-- 画面切り替えタブ -->
       <div id="nav-tabs" class="flex bg-gray-100 p-1 rounded-full text-xs font-bold shadow-inner">
-        <button class="tab-btn px-4 py-1.5 rounded-full transition bg-white text-indigo-600 shadow-sm"
+        <button class="tab-btn px-4 py-1.5 rounded-full transition bg-white text-orange-600 shadow-sm"
           onclick="switchMainTab('practice')">🏠 練習</button>
         <button class="tab-btn px-4 py-1.5 rounded-full transition text-gray-500 hover:text-gray-700"
           onclick="switchMainTab('test')">📝 実力テスト</button>
@@ -206,7 +214,7 @@
   <div id="tab-practice" class="tab-content active max-w-5xl mx-auto px-4 py-6 gap-6 flex flex-col items-center w-full">
     <div class="flex justify-center w-full">
       <div class="flex bg-gray-200 p-1 rounded-full text-xs font-bold shadow-inner w-fit">
-        <button id="mode-normal-btn" class="px-6 py-1.5 rounded-full transition bg-white text-indigo-600 shadow-sm"
+        <button id="mode-normal-btn" class="px-6 py-1.5 rounded-full transition bg-white text-orange-600 shadow-sm"
           onclick="setAppMode('normal')">通常学習</button>
         <button id="mode-endless-btn" class="px-6 py-1.5 rounded-full transition text-gray-500 hover:text-gray-700"
           onclick="setAppMode('endless')">🔥 サバイバル</button>
@@ -224,25 +232,25 @@
       <h3 class="text-sm font-bold text-gray-400 mb-2.5 uppercase tracking-wider">出題対象の選択</h3>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 w-full max-w-2xl">
         <button id="sec-all"
-          class="p-4 border-2 border-indigo-600 bg-indigo-50 rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-indigo-600 transition"
+          class="p-4 border-2 border-orange-600 bg-orange-50 rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-orange-600 transition"
           onclick="selectSection('all')">
           <span class="text-xl">🧬</span>
           <span class="font-bold text-sm text-gray-800">総合問題</span>
         </button>
         <button id="sec-aliphatic"
-          class="p-4 border border-gray-200 bg-white rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-indigo-400 transition"
+          class="p-4 border border-gray-200 bg-white rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-orange-400 transition"
           onclick="selectSection('aliphatic')">
           <span class="text-xl">🧪</span>
           <span class="font-bold text-sm text-gray-800">脂肪族</span>
         </button>
         <button id="sec-aromatic"
-          class="p-4 border border-gray-200 bg-white rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-indigo-400 transition"
+          class="p-4 border border-gray-200 bg-white rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-orange-400 transition"
           onclick="selectSection('aromatic')">
           <span class="text-xl">⬡</span>
           <span class="font-bold text-sm text-gray-800">芳香族</span>
         </button>
         <button id="sec-polymer"
-          class="p-4 border border-gray-200 bg-white rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-indigo-400 transition"
+          class="p-4 border border-gray-200 bg-white rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-orange-400 transition"
           onclick="selectSection('polymer')">
           <span class="text-xl">🕸️</span>
           <span class="font-bold text-sm text-gray-800">高分子</span>
@@ -254,19 +262,19 @@
         <h3 class="text-sm font-bold text-gray-400 mb-2 uppercase tracking-wider">出題タイプ</h3>
         <div class="grid grid-cols-3 gap-2">
           <button id="type-normal"
-            class="py-2 px-3 border-2 border-indigo-600 bg-indigo-50 text-indigo-600 text-sm font-bold rounded-lg transition"
+            class="py-2 px-3 border-2 border-orange-600 bg-orange-50 text-orange-600 text-sm font-bold rounded-lg transition"
             onclick="selectPlayType('normal')">
             ランダム10問
           </button>
           <button id="type-wrong"
-            class="py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition"
+            class="py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition"
             onclick="selectPlayType('wrong')">
             不正解問題 <span id="wrong-count-lbl" class="text-red-500 font-extrabold">(0)</span>
           </button>
           <button id="type-unanswered"
-            class="py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition"
+            class="py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition"
             onclick="selectPlayType('unanswered')">
-            未答問題 <span id="unanswered-count-lbl" class="text-indigo-500 font-extrabold">(0)</span>
+            未答問題 <span id="unanswered-count-lbl" class="text-orange-500 font-extrabold">(0)</span>
           </button>
         </div>
       </div>
@@ -276,17 +284,17 @@
         <h3 class="text-sm font-bold text-gray-400 mb-2 uppercase tracking-wider">サバイバルルール設定</h3>
         <div class="grid grid-cols-3 gap-2 mb-4">
           <button id="endless-type-inf"
-            class="py-2 px-3 border-2 border-indigo-600 bg-indigo-50 text-indigo-600 text-sm font-bold rounded-lg transition"
+            class="py-2 px-3 border-2 border-orange-600 bg-orange-50 text-orange-600 text-sm font-bold rounded-lg transition"
             onclick="setEndlessSubMode('infinite')">
             ∞ エンドレス
           </button>
           <button id="endless-type-100"
-            class="py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition"
+            class="py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition"
             onclick="setEndlessSubMode('100')">
             100人切り
           </button>
           <button id="endless-type-life"
-            class="py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition"
+            class="py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition"
             onclick="setEndlessSubMode('life')">
             ライフ設定
           </button>
@@ -294,9 +302,9 @@
         <!-- ライフ設定ボリューム -->
         <div id="life-config-area" class="hidden bg-gray-50 p-3 rounded-xl border border-gray-100 w-full text-center">
           <label class="block text-sm text-gray-500 font-bold mb-1">設定ライフ（許容誤答数）: <span id="life-val-lbl"
-              class="text-indigo-600 text-sm font-extrabold">3</span></label>
+              class="text-orange-600 text-sm font-extrabold">3</span></label>
           <input type="range" id="life-slider" min="1" max="5" value="3"
-            class="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+            class="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-orange-600"
             oninput="updateLifeLabel(this.value)">
           <div class="flex justify-between text-xs text-gray-400 mt-1"><span>1 (シビア)</span><span>5 (ビギナー)</span>
           </div>
@@ -305,7 +313,7 @@
 
       <div class="flex flex-wrap justify-center gap-3 w-full">
         <button
-          class="px-12 py-3.5 rounded-full font-bold text-sm bg-indigo-600 text-white shadow-md hover:bg-indigo-700 transition"
+          class="px-12 py-3.5 rounded-full font-bold text-sm bg-orange-600 text-white shadow-md hover:bg-orange-700 transition"
           onclick="startQuiz(false)">
           ▶ チャレンジスタート
         </button>
@@ -321,11 +329,11 @@
     <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 w-full">
       <div class="bg-white border border-gray-200 rounded-xl p-4 text-center shadow-sm">
         <p class="text-xs text-gray-400 mb-1">総挑戦回数</p>
-        <p id="stat-total" class="text-lg font-extrabold text-indigo-600">0</p>
+        <p id="stat-total" class="text-lg font-extrabold text-orange-600">0</p>
       </div>
       <div class="bg-white border border-gray-200 rounded-xl p-4 text-center shadow-sm">
         <p class="text-xs text-gray-400 mb-1">累計正解数</p>
-        <p id="stat-total-correct" class="text-lg font-extrabold text-indigo-400">0</p>
+        <p id="stat-total-correct" class="text-lg font-extrabold text-orange-400">0</p>
       </div>
       <div class="bg-white border border-gray-200 rounded-xl p-4 text-center shadow-sm">
         <p id="stat-rate-lbl" class="text-xs text-gray-400 mb-1">平均正答率</p>
@@ -363,7 +371,7 @@
           <div class="flex items-center gap-3">
             <!-- 期間切り替えタブ -->
             <div id="chart-limit-tabs" class="flex bg-gray-100 p-0.5 rounded-full text-xs font-bold">
-              <button id="tab-limit-all" class="px-2 py-0.5 rounded-full bg-white text-indigo-600 shadow-sm"
+              <button id="tab-limit-all" class="px-2 py-0.5 rounded-full bg-white text-orange-600 shadow-sm"
                 onclick="switchChartLimit(event, 0)">全件</button>
               <button id="tab-limit-20" class="px-2 py-0.5 rounded-full text-gray-500"
                 onclick="switchChartLimit(event, 20)">20件</button>
@@ -372,14 +380,14 @@
             </div>
             <!-- 通常学習用切り替えタブ -->
             <div id="practice-chart-tabs" class="flex bg-gray-100 p-0.5 rounded-full text-xs font-bold">
-              <button id="tab-score" class="px-3 py-1 rounded-full bg-white text-indigo-600 shadow-sm"
+              <button id="tab-score" class="px-3 py-1 rounded-full bg-white text-orange-600 shadow-sm"
                 onclick="switchChart(event,'score')">成績</button>
               <button id="tab-time" class="px-3 py-1 rounded-full text-gray-500"
                 onclick="switchChart(event,'time')">タイム</button>
             </div>
             <!-- サバイバル用切り替えタブ -->
             <div id="endless-chart-tabs" class="flex bg-gray-100 p-0.5 rounded-full text-xs font-bold hidden">
-              <button id="tab-endless-infinite" class="px-2.5 py-1 rounded-full bg-white text-indigo-600 shadow-sm"
+              <button id="tab-endless-infinite" class="px-2.5 py-1 rounded-full bg-white text-orange-600 shadow-sm"
                 onclick="switchEndlessChart(event,'infinite')">∞無限</button>
               <button id="tab-endless-100" class="px-2.5 py-1 rounded-full text-gray-500"
                 onclick="switchEndlessChart(event,'100')">100人</button>
@@ -424,7 +432,7 @@
             <p class="text-xs text-gray-400 mt-1">分野混合 (20問)</p>
           </div>
           <button id="test-btn-all"
-            class="w-full py-2 bg-indigo-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-indigo-700 transition"
+            class="w-full py-2 bg-orange-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-orange-700 transition"
             onclick="startTest('all')">挑戦する</button>
         </div>
         <div id="test-card-aliphatic"
@@ -435,7 +443,7 @@
             <p class="text-xs text-gray-400 mt-1">脂肪族から (20問)</p>
           </div>
           <button id="test-btn-aliphatic"
-            class="w-full py-2 bg-indigo-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-indigo-700 transition"
+            class="w-full py-2 bg-orange-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-orange-700 transition"
             onclick="startTest('aliphatic')">挑戦する</button>
         </div>
         <div id="test-card-aromatic"
@@ -446,7 +454,7 @@
             <p class="text-xs text-gray-400 mt-1">芳香族から (20問)</p>
           </div>
           <button id="test-btn-aromatic"
-            class="w-full py-2 bg-indigo-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-indigo-700 transition"
+            class="w-full py-2 bg-orange-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-orange-700 transition"
             onclick="startTest('aromatic')">挑戦する</button>
         </div>
         <div id="test-card-polymer"
@@ -457,7 +465,7 @@
             <p class="text-xs text-gray-400 mt-1">高分子から (20問)</p>
           </div>
           <button id="test-btn-polymer"
-            class="w-full py-2 bg-indigo-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-indigo-700 transition"
+            class="w-full py-2 bg-orange-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-orange-700 transition"
             onclick="startTest('polymer')">挑戦する</button>
         </div>
       </div>
@@ -470,7 +478,7 @@
           <h3 class="text-sm font-bold text-gray-800">📈 実力テスト 日付別成績推移 (複合表示)</h3>
           <!-- 期間切り替えタブ -->
           <div id="test-chart-limit-tabs" class="flex bg-gray-100 p-0.5 rounded-full text-xs font-bold">
-            <button id="tab-test-limit-all" class="px-2 py-0.5 rounded-full bg-white text-indigo-600 shadow-sm"
+            <button id="tab-test-limit-all" class="px-2 py-0.5 rounded-full bg-white text-orange-600 shadow-sm"
               onclick="switchTestChartLimit(event, 0)">全件</button>
             <button id="tab-test-limit-20" class="px-2 py-0.5 rounded-full text-gray-500"
               onclick="switchTestChartLimit(event, 20)">20件</button>
@@ -503,7 +511,7 @@
 
         <!-- 表示モード切替トグル -->
         <div class="flex bg-gray-200 p-1 rounded-full text-xs font-bold shadow-inner w-fit my-2">
-          <button id="catalog-view-tile" class="px-5 py-1 rounded-full transition bg-white text-indigo-600 shadow-sm"
+          <button id="catalog-view-tile" class="px-5 py-1 rounded-full transition bg-white text-orange-600 shadow-sm"
             onclick="setCatalogViewMode('tile')">🔲 タイル一覧</button>
           <button id="catalog-view-theme" class="px-5 py-1 rounded-full transition text-gray-500 hover:text-gray-700"
             onclick="setCatalogViewMode('theme')">📋 テーマ別一覧</button>
@@ -527,7 +535,7 @@
 
       <!-- カタログセクション分類 -->
       <div class="flex justify-center gap-2 mb-4 border-b border-gray-100 pb-3 w-full">
-        <button id="cat-tab-all" class="px-4 py-1.5 bg-indigo-600 text-white rounded-lg text-xs font-bold transition"
+        <button id="cat-tab-all" class="px-4 py-1.5 bg-orange-600 text-white rounded-lg text-xs font-bold transition"
           onclick="filterCatalog('all')">すべて</button>
         <button id="cat-tab-aliphatic"
           class="px-4 py-1.5 bg-gray-100 text-gray-600 rounded-lg text-xs font-bold transition hover:bg-gray-200"
@@ -564,23 +572,23 @@
         <div id="life-gauge" class="hidden flex gap-0.5 text-sm ml-2"></div>
       </div>
       <div
-        class="flex items-center gap-1.5 px-4 py-1.5 bg-white border border-gray-200 rounded-full shadow-sm text-sm font-bold text-indigo-600 font-mono">
+        class="flex items-center gap-1.5 px-4 py-1.5 bg-white border border-gray-200 rounded-full shadow-sm text-sm font-bold text-orange-600 font-mono">
         ⏱ <span id="timer-display">00:00</span>
       </div>
     </div>
     <div class="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden mb-5">
-      <div id="progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-cyan-500 transition-all duration-300"
+      <div id="progress-bar" class="h-full bg-gradient-to-r from-orange-500 to-cyan-500 transition-all duration-300"
         style="width:0%"></div>
     </div>
 
     <div class="bg-white border border-gray-200 rounded-2xl shadow-md p-6 w-full">
       <span id="q-theme"
-        class="inline-block text-xs font-extrabold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full mb-3 tracking-wide"></span>
+        class="inline-block text-xs font-extrabold text-orange-600 bg-orange-50 px-2.5 py-1 rounded-full mb-3 tracking-wide"></span>
       <p id="q-text" class="text-base sm:text-lg font-bold text-gray-800 leading-relaxed mb-6"></p>
       <div id="choices" class="flex flex-col gap-3 w-full"></div>
       <div id="feedback-bar" class="hidden items-center gap-2 mt-4 p-3 rounded-lg text-sm font-bold w-full"></div>
       <div id="auto-bar-wrap" class="hidden h-1.5 bg-gray-200 rounded-full mt-3 overflow-hidden w-full">
-        <div id="auto-bar" class="h-full bg-indigo-600"></div>
+        <div id="auto-bar" class="h-full bg-orange-600"></div>
       </div>
     </div>
   </div>
@@ -591,7 +599,7 @@
       class="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 text-center flex flex-col items-center w-full">
       <p id="result-emoji" class="text-5xl mb-2">🎉</p>
       <h2 id="result-title" class="text-xl font-bold text-gray-800 mb-3"></h2>
-      <p id="result-score-display" class="text-5xl font-extrabold text-indigo-600 leading-none mb-1 font-mono"></p>
+      <p id="result-score-display" class="text-5xl font-extrabold text-orange-600 leading-none mb-1 font-mono"></p>
       <p id="result-sub" class="text-sm text-gray-500 mb-4"></p>
       <div id="perfect-badge-wrap" class="mb-2"></div>
     </div>
@@ -605,7 +613,7 @@
 
     <div class="flex flex-wrap justify-center gap-3 mt-6 w-full">
       <button id="result-retry-btn"
-        class="px-6 py-2.5 rounded-full font-bold text-xs bg-indigo-600 text-white shadow hover:bg-indigo-700 transition"
+        class="px-6 py-2.5 rounded-full font-bold text-xs bg-orange-600 text-white shadow hover:bg-orange-700 transition"
         onclick="retryThisSetting()">🔄 再挑戦</button>
       <button id="result-revenge-btn"
         class="px-6 py-2.5 rounded-full font-bold text-xs bg-gradient-to-r from-orange-500 to-red-500 text-white shadow hover:opacity-95 transition hidden"
@@ -622,7 +630,7 @@
 
       <!-- 左切り替えボタン -->
       <button id="modal-nav-prev"
-        class="absolute left-2 md:-left-16 bg-white hover:bg-indigo-50 text-indigo-600 w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition z-20"
+        class="absolute left-2 md:-left-16 bg-white hover:bg-orange-50 text-orange-600 w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition z-20"
         onclick="navigateCatalog(-1)">
         <span class="font-bold text-sm">◀</span>
       </button>
@@ -642,7 +650,7 @@
 
       <!-- 右切り替えボタン -->
       <button id="modal-nav-next"
-        class="absolute right-2 md:-right-16 bg-white hover:bg-indigo-50 text-indigo-600 w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition z-20"
+        class="absolute right-2 md:-right-16 bg-white hover:bg-orange-50 text-orange-600 w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition z-20"
         onclick="navigateCatalog(1)">
         <span class="font-bold text-sm">▶</span>
       </button>
@@ -1389,7 +1397,7 @@
       if (tab === 'test') { targetTabId = 'tab-test'; activeIdx = 1; }
       else if (tab === 'catalog') { targetTabId = 'tab-catalog'; activeIdx = 2; }
 
-      document.querySelectorAll('.tab-btn')[activeIdx].className = "tab-btn px-4 py-1.5 rounded-full transition bg-white text-indigo-600 shadow-sm";
+      document.querySelectorAll('.tab-btn')[activeIdx].className = "tab-btn px-4 py-1.5 rounded-full transition bg-white text-orange-600 shadow-sm";
 
       showScreen(targetTabId);
 
@@ -1419,7 +1427,7 @@
       const endlessTabs = document.getElementById('endless-chart-tabs');
 
       if (mode === 'normal') {
-        normalBtn.className = "px-6 py-1.5 rounded-full transition bg-white text-indigo-600 shadow-sm";
+        normalBtn.className = "px-6 py-1.5 rounded-full transition bg-white text-orange-600 shadow-sm";
         endlessBtn.className = "px-6 py-1.5 rounded-full transition text-gray-500 hover:text-gray-700";
         normalOpts.classList.remove('hidden');
         endlessOpts.classList.add('hidden');
@@ -1429,7 +1437,7 @@
         document.getElementById('home-hero-desc').innerHTML = "学習したい単元や条件を選択してください。ランダムでハズレ選択肢が毎回切り替わる10問が出題されます。";
       } else {
         normalBtn.className = "px-6 py-1.5 rounded-full transition text-gray-500 hover:text-gray-700";
-        endlessBtn.className = "px-6 py-1.5 rounded-full transition bg-white text-indigo-600 shadow-sm";
+        endlessBtn.className = "px-6 py-1.5 rounded-full transition bg-white text-orange-600 shadow-sm";
         normalOpts.classList.add('hidden');
         endlessOpts.classList.remove('hidden');
         practiceTabs.classList.add('hidden');
@@ -1443,36 +1451,36 @@
     function selectSection(sec) {
       selectedSec = sec;
       document.querySelectorAll('[id^="sec-"]').forEach(c => {
-        c.className = "p-3 border border-gray-200 bg-white rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-indigo-400 transition";
+        c.className = "p-3 border border-gray-200 bg-white rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-orange-400 transition";
       });
       const activeEl = document.getElementById(`sec-${sec}`);
       if (activeEl) {
-        activeEl.className = "p-3 border-2 border-indigo-600 bg-indigo-50 rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-indigo-600 transition";
+        activeEl.className = "p-3 border-2 border-orange-600 bg-orange-50 rounded-xl flex flex-col items-center justify-center text-center gap-1 hover:border-orange-600 transition";
       }
       updateConditionCounts();
     }
 
     function selectPlayType(type) {
       selectedPlayType = type;
-      document.getElementById('type-normal').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition";
-      document.getElementById('type-wrong').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition";
-      document.getElementById('type-unanswered').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition";
+      document.getElementById('type-normal').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition";
+      document.getElementById('type-wrong').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition";
+      document.getElementById('type-unanswered').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition";
 
       const targetEl = document.getElementById(`type-${type}`);
       if (targetEl) {
-        targetEl.className = "py-2 px-3 border-2 border-indigo-600 bg-indigo-50 text-indigo-600 text-sm font-bold rounded-lg transition";
+        targetEl.className = "py-2 px-3 border-2 border-orange-600 bg-orange-50 text-orange-600 text-sm font-bold rounded-lg transition";
       }
     }
 
     function setEndlessSubMode(smode) {
       endlessSubMode = smode;
-      document.getElementById('endless-type-inf').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition";
-      document.getElementById('endless-type-100').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition";
-      document.getElementById('endless-type-life').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-indigo-400 transition";
+      document.getElementById('endless-type-inf').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition";
+      document.getElementById('endless-type-100').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition";
+      document.getElementById('endless-type-life').className = "py-2 px-3 border border-gray-200 bg-white text-gray-600 text-sm font-bold rounded-lg hover:border-orange-400 transition";
 
       const targetEl = document.getElementById(`endless-type-${smode}`);
       if (targetEl) {
-        targetEl.className = "py-2 px-3 border-2 border-indigo-600 bg-indigo-50 text-indigo-600 text-sm font-bold rounded-lg transition";
+        targetEl.className = "py-2 px-3 border-2 border-orange-600 bg-orange-50 text-orange-600 text-sm font-bold rounded-lg transition";
       }
 
       const lifeArea = document.getElementById('life-config-area');
@@ -1617,23 +1625,23 @@
             statusBadge = '<span class="text-xs font-bold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded">🎯 リベンジまってるよ</span>';
           }
 
-          return `<div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-gray-50 hover:border-indigo-600 transition cursor-pointer w-full" onclick="openPracticeHistoryDetail(${originalIdx})">
+          return `<div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-gray-50 hover:border-orange-600 transition cursor-pointer w-full" onclick="openPracticeHistoryDetail(${originalIdx})">
         <span class="text-xs text-gray-400 font-mono">#${originalIdx + 1}</span>
         <div class="flex-1 min-w-0">
           <p class="text-sm font-bold text-gray-700 truncate">${dateStr}</p>
           <div class="flex items-center gap-1.5 mt-1">
-            <span class="text-xs bg-indigo-50 text-indigo-600 font-bold px-1 rounded">${secName}</span>
+            <span class="text-xs bg-orange-50 text-orange-600 font-bold px-1 rounded">${secName}</span>
             ${statusBadge}
           </div>
         </div>
         <div class="text-right">
-          <p class="text-sm font-extrabold text-indigo-600">${r.correct} / ${r.total}</p>
+          <p class="text-sm font-extrabold text-orange-600">${r.correct} / ${r.total}</p>
           <p class="text-xs text-gray-400 font-mono">${fmtTime(r.elapsed)}</p>
         </div>
       </div>`;
         } else {
           const subModeName = r.subMode === 'infinite' ? '∞エンドレス' : (r.subMode === '100' ? '100人切り' : `ライフ ${r.lifeLimit}`);
-          return `<div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-gray-50 hover:border-indigo-600 transition cursor-pointer w-full" onclick="openPracticeHistoryDetail(${originalIdx})">
+          return `<div class="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-gray-50 hover:border-orange-600 transition cursor-pointer w-full" onclick="openPracticeHistoryDetail(${originalIdx})">
         <span class="text-xs text-gray-400 font-mono">#${originalIdx + 1}</span>
         <div class="flex-1 min-w-0">
           <p class="text-sm font-bold text-gray-700 truncate">${dateStr}</p>
@@ -1698,7 +1706,7 @@
       document.querySelectorAll('#chart-limit-tabs button').forEach(b => {
         b.className = "px-2 py-0.5 rounded-full text-gray-500";
       });
-      e.target.className = "px-2 py-0.5 rounded-full bg-white text-indigo-600 shadow-sm";
+      e.target.className = "px-2 py-0.5 rounded-full bg-white text-orange-600 shadow-sm";
       renderPracticeChart();
     }
 
@@ -1706,7 +1714,7 @@
       chartType = type;
       document.getElementById('tab-score').className = "px-3 py-1 rounded-full text-gray-500";
       document.getElementById('tab-time').className = "px-3 py-1 rounded-full text-gray-500";
-      e.target.className = "px-3 py-1 rounded-full bg-white text-indigo-600 shadow-sm";
+      e.target.className = "px-3 py-1 rounded-full bg-white text-orange-600 shadow-sm";
       renderPracticeChart();
     }
 
@@ -1715,7 +1723,7 @@
       document.querySelectorAll('#endless-chart-tabs button').forEach(b => {
         b.className = "px-2.5 py-1 rounded-full text-gray-500";
       });
-      e.target.className = "px-2.5 py-1 rounded-full bg-white text-indigo-600 shadow-sm";
+      e.target.className = "px-2.5 py-1 rounded-full bg-white text-orange-600 shadow-sm";
       renderPracticeChart();
     }
 
@@ -1892,7 +1900,7 @@
       <div class="grid grid-cols-2 gap-2 text-center mb-4 text-sm">
         <div class="bg-gray-50 p-2.5 rounded-xl"><p class="text-xs text-gray-400">日付</p><p class="font-bold text-gray-700">${dateStr}</p></div>
         <div class="bg-gray-50 p-2.5 rounded-xl"><p class="text-xs text-gray-400">単元</p><p class="font-bold text-gray-700">${secName}</p></div>
-        <div class="bg-gray-50 p-2.5 rounded-xl"><p class="text-xs text-gray-400">スコア</p><p class="font-extrabold text-indigo-600">${r.correct} / ${r.total}</p></div>
+        <div class="bg-gray-50 p-2.5 rounded-xl"><p class="text-xs text-gray-400">スコア</p><p class="font-extrabold text-orange-600">${r.correct} / ${r.total}</p></div>
         <div class="bg-gray-50 p-2.5 rounded-xl"><p class="text-xs text-gray-400">タイム</p><p class="font-bold text-orange-500">${fmtTime(r.elapsed)}</p></div>
       </div>
     `;
@@ -1972,8 +1980,8 @@
           btn.textContent = "本日受験済み";
           btn.disabled = true;
         } else {
-          card.className = "border border-gray-200 rounded-xl p-4 text-center bg-white shadow-sm flex flex-col justify-between h-40 hover:border-indigo-400 transition";
-          btn.className = "w-full py-2 bg-indigo-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-indigo-700 transition";
+          card.className = "border border-gray-200 rounded-xl p-4 text-center bg-white shadow-sm flex flex-col justify-between h-40 hover:border-orange-400 transition";
+          btn.className = "w-full py-2 bg-orange-600 text-white font-bold text-xs rounded-lg mt-3 hover:bg-orange-700 transition";
           btn.textContent = "挑戦する";
           btn.disabled = false;
         }
@@ -2014,7 +2022,7 @@
         const originalIdx = hist.length - 1 - i;
         const secName = getSecName(r.section);
 
-        return `<div class="flex items-center gap-3 p-2.5 rounded-lg border border-gray-200 bg-gray-50 hover:border-indigo-600 transition cursor-pointer w-full" onclick="openTestHistoryDetail(${originalIdx})">
+        return `<div class="flex items-center gap-3 p-2.5 rounded-lg border border-gray-200 bg-gray-50 hover:border-orange-600 transition cursor-pointer w-full" onclick="openTestHistoryDetail(${originalIdx})">
       <span class="text-xs text-gray-400 font-mono">#${originalIdx + 1}</span>
       <div class="flex-1 min-w-0">
         <p class="text-sm font-bold text-gray-700 truncate">${dateStr}</p>
@@ -2077,7 +2085,7 @@
       document.querySelectorAll('#test-chart-limit-tabs button').forEach(b => {
         b.className = "px-2 py-0.5 rounded-full text-gray-500";
       });
-      e.target.className = "px-2 py-0.5 rounded-full bg-white text-indigo-600 shadow-sm";
+      e.target.className = "px-2 py-0.5 rounded-full bg-white text-orange-600 shadow-sm";
       renderTestChart();
     }
 
@@ -2234,13 +2242,13 @@
       const themeArea = document.getElementById('catalog-theme-area');
 
       if (mode === 'tile') {
-        tileBtn.className = "px-5 py-1 rounded-full transition bg-white text-indigo-600 shadow-sm";
+        tileBtn.className = "px-5 py-1 rounded-full transition bg-white text-orange-600 shadow-sm";
         themeBtn.className = "px-5 py-1 rounded-full transition text-gray-500 hover:text-gray-700";
         tileGrid.classList.remove('hidden');
         themeArea.classList.add('hidden');
       } else {
         tileBtn.className = "px-5 py-1 rounded-full transition text-gray-500 hover:text-gray-700";
-        themeBtn.className = "px-5 py-1 rounded-full transition bg-white text-indigo-600 shadow-sm";
+        themeBtn.className = "px-5 py-1 rounded-full transition bg-white text-orange-600 shadow-sm";
         tileGrid.classList.add('hidden');
         themeArea.classList.remove('hidden');
       }
@@ -2253,7 +2261,7 @@
       tabs.forEach(t => {
         const el = document.getElementById(`cat-tab-${t}`);
         if (t === sec) {
-          el.className = "px-4 py-1.5 bg-indigo-600 text-white rounded-lg text-xs font-bold transition";
+          el.className = "px-4 py-1.5 bg-orange-600 text-white rounded-lg text-xs font-bold transition";
         } else {
           el.className = "px-4 py-1.5 bg-gray-100 text-gray-600 rounded-lg text-xs font-bold transition hover:bg-gray-200";
         }
@@ -2319,7 +2327,7 @@
 
           return `
         <div class="flex items-center gap-3 p-2 bg-gray-50 rounded-xl border border-gray-100 w-full text-sm">
-          <div class="relative group w-8 h-8 flex-shrink-0 text-xs font-extrabold text-indigo-600 bg-indigo-50 border border-indigo-100 rounded-lg flex items-center justify-center cursor-help">
+          <div class="relative group w-8 h-8 flex-shrink-0 text-xs font-extrabold text-orange-600 bg-orange-50 border border-orange-100 rounded-lg flex items-center justify-center cursor-help">
             ${tId}
             <!-- ホバー時に表示されるカスタムツールチップ -->
             <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-900 text-white text-xs font-bold px-2.5 py-1 rounded shadow-lg whitespace-nowrap z-50 pointer-events-none">
@@ -2391,13 +2399,13 @@
       const contentHtml = `
     <div class="space-y-3">
       <div class="flex justify-between items-center bg-gray-50 p-2 rounded-lg">
-        <span class="text-xs font-extrabold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">テーマ ${q.theme}: ${THEMES[q.theme]}</span>
+        <span class="text-xs font-extrabold text-orange-600 bg-orange-50 px-2 py-0.5 rounded">テーマ ${q.theme}: ${THEMES[q.theme]}</span>
         <span class="text-xs text-gray-500">直近成績: ${histHtml}</span>
       </div>
       <p class="font-bold text-gray-800 text-base leading-relaxed">${q.text}</p>
       
       <div class="mt-4">
-        <button onclick="toggleCatalogAnswer()" class="w-full py-2 bg-indigo-50 text-indigo-600 hover:bg-indigo-100 transition rounded-xl font-bold text-xs flex items-center justify-center gap-1">
+        <button onclick="toggleCatalogAnswer()" class="w-full py-2 bg-orange-50 text-orange-600 hover:bg-orange-100 transition rounded-xl font-bold text-xs flex items-center justify-center gap-1">
           <span id="toggle-icon">👁️</span> <span id="toggle-text">正解・解説（選択肢）を表示する</span>
         </button>
         <div id="catalog-answer-area" class="hidden mt-3 bg-gray-50 rounded-xl p-3 space-y-1 text-xs border border-gray-100">
@@ -2412,7 +2420,7 @@
   `;
 
       const footerHtml = `
-    <button class="px-4 py-2 bg-indigo-600 text-white font-bold text-xs rounded-full hover:bg-indigo-700 shadow" onclick="startSingleQuestionChallenge(${qId})">🎯 この問題だけ解く</button>
+    <button class="px-4 py-2 bg-orange-600 text-white font-bold text-xs rounded-full hover:bg-orange-700 shadow" onclick="startSingleQuestionChallenge(${qId})">🎯 この問題だけ解く</button>
     <button class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold text-xs rounded-full" onclick="closeModal()">閉じる</button>
   `;
 
@@ -2583,7 +2591,7 @@
         if (endlessSubMode === 'infinite') {
           life = 1;
           totalQ = 9999;
-          document.getElementById('quiz-progress-lbl').innerHTML = `撃破数: <span id="q-current" class="text-indigo-600 font-extrabold text-sm">0</span>`;
+          document.getElementById('quiz-progress-lbl').innerHTML = `撃破数: <span id="q-current" class="text-orange-600 font-extrabold text-sm">0</span>`;
           document.getElementById('life-gauge').classList.add('hidden');
         } else if (endlessSubMode === '100') {
           life = 1;
@@ -2597,7 +2605,7 @@
         } else {
           life = selectedLife;
           totalQ = 9999;
-          document.getElementById('quiz-progress-lbl').innerHTML = `撃破数: <span id="q-current" class="text-indigo-600 font-extrabold text-sm">0</span>`;
+          document.getElementById('quiz-progress-lbl').innerHTML = `撃破数: <span id="q-current" class="text-orange-600 font-extrabold text-sm">0</span>`;
           renderLifeHearts();
         }
         document.getElementById('quiz-header-title').textContent = `サバイバル (${getSecName(selectedSec)})`;
@@ -2657,7 +2665,7 @@
 
       finalChoices.forEach((choiceText, pos) => {
         const btn = document.createElement('button');
-        btn.className = "flex items-start w-full gap-4 px-4 py-3 border border-gray-200 bg-gray-50 hover:bg-indigo-50 hover:border-indigo-600 rounded-xl text-left text-sm sm:text-base text-gray-700 font-medium transition duration-150";
+        btn.className = "flex items-start w-full gap-4 px-4 py-3 border border-gray-200 bg-gray-50 hover:bg-orange-50 hover:border-orange-600 rounded-xl text-left text-sm sm:text-base text-gray-700 font-medium transition duration-150";
         const isThisCorrect = (choiceText === correctChoice);
         btn.setAttribute('data-correct', isThisCorrect ? 'true' : 'false');
         btn.innerHTML = `<span class="flex-shrink-0 w-7 h-7 bg-white border border-gray-300 rounded-full flex items-center justify-center font-bold text-sm text-gray-500 shadow-sm">${labels[pos]}</span><span class="leading-relaxed mt-0.5">${choiceText}</span>`;
@@ -2749,7 +2757,7 @@
       abw.classList.remove('hidden');
       ab.style.animationName = 'none';
       void ab.offsetWidth;
-      ab.className = "h-full bg-indigo-600 auto-slide-anim";
+      ab.className = "h-full bg-orange-600 auto-slide-anim";
 
       if (autoTimer) clearTimeout(autoTimer);
       autoTimer = setTimeout(() => {
@@ -2887,7 +2895,7 @@
         document.getElementById('result-grid').innerHTML = `
       <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">正解数</p><p class="text-xl font-bold text-green-600">${score}</p></div>
       <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">不正解数</p><p class="text-xl font-bold text-red-500">${20 - score}</p></div>
-      <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">得点率</p><p class="text-xl font-bold text-indigo-600">${rate}%</p></div>
+      <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">得点率</p><p class="text-xl font-bold text-orange-600">${rate}%</p></div>
       <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">タイム</p><p class="text-xl font-bold text-orange-500">${fmtTime(elapsed)}</p></div>
     `;
 
@@ -2917,7 +2925,7 @@
         document.getElementById('result-grid').innerHTML = `
       <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">正解数</p><p class="text-xl font-bold text-green-600">${score}</p></div>
       <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">不正解数</p><p class="text-xl font-bold text-red-500">${totalQ - score}</p></div>
-      <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">正答率</p><p class="text-xl font-bold text-indigo-600">${rate}%</p></div>
+      <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">正答率</p><p class="text-xl font-bold text-orange-600">${rate}%</p></div>
       <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">タイム</p><p class="text-xl font-bold text-orange-500">${fmtTime(elapsed)}</p></div>
     `;
 
@@ -2949,7 +2957,7 @@
 
         document.getElementById('result-grid').innerHTML = `
       <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">指名コンボ</p><p class="text-xl font-bold text-orange-500">${score}</p></div>
-      <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">生存タイム</p><p class="text-xl font-bold text-indigo-600">${fmtTime(elapsed)}</p></div>
+      <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">生存タイム</p><p class="text-xl font-bold text-orange-600">${fmtTime(elapsed)}</p></div>
       <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">過去最高コンボ</p><p class="text-xl font-bold text-amber-500">${bestCombo}</p></div>
       <div class="bg-gray-50 p-4 rounded-xl text-center"><p class="text-xs text-gray-400">挑戦セクション</p><p class="text-xl font-bold text-gray-700">${getSecName(selectedSec)}</p></div>
     `;
@@ -2965,7 +2973,7 @@
       } else {
         rl.innerHTML = wrongs.map(w => `
       <div class="border-b border-gray-100 pb-3 last:border-b-0 pt-2 text-sm w-full text-left">
-        <p class="text-xs font-extrabold text-indigo-500">テーマ${w.theme}: ${THEMES[w.theme]}</p>
+        <p class="text-xs font-extrabold text-orange-500">テーマ${w.theme}: ${THEMES[w.theme]}</p>
         <p class="font-bold text-gray-800 mt-0.5">${w.text}</p>
         <p class="text-green-600 font-bold mt-1">✅ 正解: ${w.correctAnsText}</p>
         <p class="text-red-500 font-medium">❌ あなたの回答: ${w.userAnsText}</p>
